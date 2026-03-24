@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Verso</title>
+  <meta name="description" content="Verso is a Greater London building and renovation company built on trust, transparency, and quality craftsmanship. Learn about our story, values, and approach.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── ABOUT PAGE EXTRAS ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .stat-item { text-align: center; }
+    .stat-item .value {
+      font-family: 'Fraunces', serif;
+      font-size: 44px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .stat-item .label {
+      font-size: 14px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cert-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .cert-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .cert-card p {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .stat-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .certifications-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a href="index.html" class="logo">Verso<span>.</span></a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Get your estimate</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="section">
+  <div class="about-hero">
+    <div class="about-hero-text">
+      <div class="section-label">About Verso</div>
+      <div class="section-title">We believe renovating your home should feel <em style="font-family: 'Fraunces', serif; color: var(--brand);">exciting, not stressful</em></div>
+      <div class="section-intro">Verso is a Greater London building and renovation company founded on a simple idea: that the process of transforming your home should be as enjoyable as the result. We bring clarity, craft, and genuine care to every project we take on.</div>
+    </div>
+    <div class="about-hero-image">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Verso team working on a residential renovation project" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="section section-warm" style="padding-top: 0; padding-bottom: 0;">
+  <div class="stat-row">
+    <div class="stat-item">
+      <div class="value">150+</div>
+      <div class="label">Projects completed</div>
+    </div>
+    <div class="stat-item">
+      <div class="value">12</div>
+      <div class="label">Years experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="value">98%</div>
+      <div class="label">Client satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="value">32</div>
+      <div class="label">London boroughs</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR STORY ── -->
+<section class="section">
+  <div class="about-hero" style="gap: 64px;">
+    <div style="flex: 1;">
+      <div class="section-label">Our story</div>
+      <div class="section-title" style="font-size: 36px;">Started local,<br>stayed personal</div>
+      <p style="font-size: 16px; line-height: 1.8; color: var(--text); margin-top: 20px;">Verso started with a handful of projects in south London and a commitment to doing things properly. No cutting corners, no disappearing mid-build, no vague quotes that balloon once the work begins.</p>
+      <p style="font-size: 16px; line-height: 1.8; color: var(--text); margin-top: 16px;">Over the years we've grown — but we've kept the things that made those early projects work: a dedicated project manager for every job, honest pricing, and the kind of communication that means you always know what's happening in your own home.</p>
+      <p style="font-size: 16px; line-height: 1.8; color: var(--text); margin-top: 16px;">Today we work across all of Greater London, delivering everything from kitchen renovations to full new builds. The scale has changed. The standards haven't.</p>
+    </div>
+    <div style="flex: 1; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden;">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="A beautifully renovated London home" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUES ── -->
+<section class="section section-warm">
+  <div class="container" style="margin-bottom: 48px;">
+    <div class="section-label">What we stand for</div>
+    <div class="section-title">Our values</div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <h3>Transparency</h3>
+      <p>Clear, detailed quotes with no hidden costs. We'll tell you what things cost, why, and what to expect — before any work begins.</p>
+    </div>
+    <div class="value-card">
+      <h3>Craftsmanship</h3>
+      <p>We take pride in the quality of our work. Every finish, every joint, every detail is held to the same high standard — because your home deserves it.</p>
+    </div>
+    <div class="value-card">
+      <h3>Communication</h3>
+      <p>Weekly updates, a dedicated project manager, and an open-door policy. You'll never have to chase us for information about your own project.</p>
+    </div>
+    <div class="value-card">
+      <h3>Respect</h3>
+      <p>We respect your home, your time, and your budget. We leave the site tidy at the end of every day and stick to agreed timelines.</p>
+    </div>
+    <div class="value-card">
+      <h3>Accountability</h3>
+      <p>If something isn't right, we fix it — promptly and at our cost. We stand behind every project with a workmanship warranty.</p>
+    </div>
+    <div class="value-card">
+      <h3>Enjoyment</h3>
+      <p>Renovating your home should be exciting. We've built our process to take the stress out and put the enjoyment in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<section class="section">
+  <div class="container" style="margin-bottom: 48px;">
+    <div class="section-label">Insurance & governance</div>
+    <div class="section-title">Fully insured & certified</div>
+    <div class="section-intro">We carry comprehensive insurance and hold the certifications you'd expect from a reputable building company.</div>
+  </div>
+  <div class="certifications-grid">
+    <div class="cert-card">
+      <h3>Public liability insurance</h3>
+      <p>Comprehensive cover for all work we carry out on your property, protecting both you and your home.</p>
+    </div>
+    <div class="cert-card">
+      <h3>Employer's liability insurance</h3>
+      <p>Full cover for our team and any subcontractors working on your project.</p>
+    </div>
+    <div class="cert-card">
+      <h3>Health & safety compliance</h3>
+      <p>All projects are managed in accordance with CDM regulations and current H&S legislation.</p>
+    </div>
+    <div class="cert-card">
+      <h3 class="placeholder-note" style="font-family: 'Fraunces', serif; background: none; border: none; padding: 0;">Additional certifications — to be confirmed</h3>
+      <p style="font-style: italic; color: var(--text-light);">Specific trade body memberships and accreditations will be listed here once confirmed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-banner">
+  <h2>Ready to talk about your home?</h2>
+  <p>Book a free consultation and we'll visit to discuss your project — no obligation, no hard sell.</p>
+  <a href="contact.html" class="btn-primary">Get your free estimate →</a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo">Verso<span>.</span></a>
+      <p>1 Nightingale Lane<br>London SW16 3RT</p>
+      <p style="margin-top: 12px;">test@gmail.com<br>020 XXXX XXXX</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="services.html#kitchens">Kitchens</a>
+      <a href="services.html#bathrooms">Bathrooms</a>
+      <a href="services.html#loft-conversions">Loft conversions</a>
+      <a href="services.html#new-builds">New builds</a>
+      <a href="services.html#renovations">Renovations</a>
+      <a href="services.html#planning">Planning & design</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About us</a>
+      <a href="projects.html">Our projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Privacy policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Areas we cover</h4>
+      <a href="#">Greater London</a>
+      <a href="#">South London</a>
+      <a href="#">North London</a>
+      <a href="#">East London</a>
+      <a href="#">West London</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Verso. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

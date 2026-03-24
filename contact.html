@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Verso</title>
+  <meta name="description" content="Get in touch with Verso for a free, no-obligation consultation and estimate. We serve all of Greater London for renovations, new builds, kitchens, bathrooms, and loft conversions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── CONTACT PAGE EXTRAS ── */
+    .contact-hero {
+      max-width: 640px;
+    }
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .contact-method {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .contact-method h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .contact-method p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .contact-method a {
+      color: var(--brand);
+      font-weight: 600;
+    }
+    .contact-method a:hover { text-decoration: underline; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .form-success h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .form-success p {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .contact-methods { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a href="index.html" class="logo">Verso<span>.</span></a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html" class="nav-cta">Get your estimate</a>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<section class="section" style="padding-bottom: 48px;">
+  <div class="container contact-hero">
+    <div class="section-label">Get in touch</div>
+    <div class="section-title">Let's talk about your project</div>
+    <div class="section-intro">Whether you've got detailed plans or just a rough idea, we'd love to hear from you. Fill in the form below or get in touch directly — there's no obligation and no hard sell.</div>
+  </div>
+</section>
+
+<!-- ── CONTACT METHODS ── -->
+<section class="section section-warm" style="padding-top: 48px; padding-bottom: 48px;">
+  <div class="contact-methods">
+    <div class="contact-method">
+      <h3>Email us</h3>
+      <p><a href="mailto:test@gmail.com">test@gmail.com</a></p>
+      <p style="margin-top: 8px; font-size: 13px; color: var(--text-light);">We typically respond within 24 hours</p>
+    </div>
+    <div class="contact-method">
+      <h3>Call us</h3>
+      <p><a href="tel:+44200000000">020 XXXX XXXX</a></p>
+      <p style="margin-top: 8px; font-size: 13px; color: var(--text-light);">Monday–Friday, 8am–6pm</p>
+    </div>
+    <div class="contact-method">
+      <h3>Visit us</h3>
+      <p>1 Nightingale Lane<br>London SW16 3RT</p>
+      <p style="margin-top: 8px; font-size: 13px; color: var(--text-light);">By appointment only</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENQUIRY FORM ── -->
+<section class="section">
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h3>Request a free estimate</h3>
+      <p>Tell us a bit about your project and we'll get back to you within 24 hours with some initial thoughts. If it looks like a good fit, we'll arrange a free site visit at a time that suits you.</p>
+
+      <div style="margin-top: 40px;">
+        <div class="section-label" style="margin-bottom: 24px;">What to expect</div>
+
+        <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0;">1</div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px; color: var(--ink);">We'll review your enquiry</div>
+            <div style="font-size: 14px; color: var(--text);">Within 24 hours of receiving your form</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0;">2</div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px; color: var(--ink);">We'll arrange a site visit</div>
+            <div style="font-size: 14px; color: var(--text);">Free, at a time that suits you</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0;">3</div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px; color: var(--ink);">You'll receive a detailed estimate</div>
+            <div style="font-size: 14px; color: var(--text);">Transparent, all-inclusive, no surprises</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Your name *</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Sarah Johnson">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required placeholder="e.g. sarah@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 07XXX XXXXXX">
+        </div>
+        <div class="form-group">
+          <label for="postcode">Property postcode *</label>
+          <input type="text" id="postcode" name="postcode" required placeholder="e.g. SW16 3RT">
+        </div>
+        <div class="form-group">
+          <label for="service">What type of project? *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="kitchen">Kitchen renovation</option>
+            <option value="bathroom">Bathroom renovation</option>
+            <option value="loft-conversion">Loft conversion</option>
+            <option value="new-build">New build</option>
+            <option value="renovation">Full renovation</option>
+            <option value="demolition">Demolition</option>
+            <option value="planning">Planning & design</option>
+            <option value="painting">Painting & decorating</option>
+            <option value="project-management">Project management</option>
+            <option value="other">Other / not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project *</label>
+          <textarea id="message" name="message" required placeholder="What are you looking to do? Any rough timelines or budget in mind? The more you share, the more helpful our initial response will be."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="how-found">How did you hear about us?</label>
+          <select id="how-found" name="how-found">
+            <option value="" disabled selected>Select an option</option>
+            <option value="google">Google search</option>
+            <option value="recommendation">Friend or family recommendation</option>
+            <option value="social-media">Social media</option>
+            <option value="houzz">Houzz</option>
+            <option value="drove-past">Drove/walked past a project</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;">Send your enquiry →</button>
+        <p style="font-size: 13px; color: var(--text-light); margin-top: 12px; text-align: center;">We'll respond within 24 hours. No spam, no hard sell.</p>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <h3>Thank you!</h3>
+        <p>We've received your enquiry and will be in touch within 24 hours. In the meantime, feel free to browse our <a href="projects.html" style="color: var(--brand); font-weight: 600;">recent projects</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAP PLACEHOLDER ── -->
+<section class="section section-warm" style="padding-top: 48px; padding-bottom: 48px;">
+  <div class="container" style="text-align: center;">
+    <div class="section-label">Where we work</div>
+    <div class="section-title" style="font-size: 32px;">Serving all of Greater London</div>
+    <p style="font-size: 16px; color: var(--text); max-width: 520px; margin: 16px auto 0;">From Hampstead to Croydon, Richmond to Greenwich — we cover all 32 London boroughs and surrounding areas.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo">Verso<span>.</span></a>
+      <p>1 Nightingale Lane<br>London SW16 3RT</p>
+      <p style="margin-top: 12px;">test@gmail.com<br>020 XXXX XXXX</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="services.html#kitchens">Kitchens</a>
+      <a href="services.html#bathrooms">Bathrooms</a>
+      <a href="services.html#loft-conversions">Loft conversions</a>
+      <a href="services.html#new-builds">New builds</a>
+      <a href="services.html#renovations">Renovations</a>
+      <a href="services.html#planning">Planning & design</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About us</a>
+      <a href="projects.html">Our projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Privacy policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Areas we cover</h4>
+      <a href="#">Greater London</a>
+      <a href="#">South London</a>
+      <a href="#">North London</a>
+      <a href="#">East London</a>
+      <a href="#">West London</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Verso. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // ── FORM HANDLING ──
+  // In production this would submit to a backend / Formspree / Netlify Forms etc.
+  // For MVP, we show a success message on submit.
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contact-form');
+    var success = document.getElementById('form-success');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        success.style.display = 'block';
+        window.scrollTo({ top: success.offsetTop - 120, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
+</body>
+</html>
