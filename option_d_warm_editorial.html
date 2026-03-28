@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlockBox Ltd — Ink & Cloud</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --warm-bg: #F3F1ED;
+  --cream: #FAF9F7;
+  --brand: #B69D74;
+  --brand-dark: #9A845F;
+  --brand-light: #D9CCBA;
+  --text-dark: #1B2A4A;
+  --text-body: #4A5568;
+  --text-light: #8A8E94;
+  --accent-green: #5B7A5E;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 64px;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+.logo span { color: var(--brand); }
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-body);
+  font-size: 15px;
+  font-weight: 500;
+}
+.nav-links a:hover { color: var(--text-dark); }
+.nav-cta {
+  background: var(--text-dark);
+  color: var(--cream) !important;
+  padding: 12px 28px;
+  border-radius: 32px;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: #243657; }
+
+/* ── HERO ── */
+.hero {
+  padding: 40px 64px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-top {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+.hero-text { flex: 1; padding-top: 24px; }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  line-height: 1.12;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--brand);
+}
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--brand);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.hero-cta:hover { background: var(--brand-dark); }
+.hero-cta-note {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.hero-image {
+  flex: 1.2;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #E4E1DC, #D4D0CA);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A8A49E;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.hero-image::after {
+  content: '📸 Bright, airy kitchen or living space photo';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* ── PRESS BAR ── */
+.press-bar {
+  padding: 32px 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  opacity: 0.4;
+}
+.press-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ── TESTIMONIALS STRIP ── */
+.testimonials-strip {
+  background: var(--warm-bg);
+  padding: 72px 64px;
+}
+.testimonials-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.testimonial-card {
+  background: var(--cream);
+  padding: 32px;
+  border-radius: 12px;
+}
+.stars {
+  color: var(--brand);
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.testimonial-card blockquote {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testimonial-author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.testimonial-location {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* ── SECTION ── */
+.section {
+  padding: 96px 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-full {
+  padding: 96px 64px;
+}
+.section-warm { background: var(--warm-bg); }
+.section-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-intro {
+  font-size: 18px;
+  color: var(--text-body);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 56px;
+}
+
+/* ── SERVICE ROWS (editorial style, not grid cards) ── */
+.service-row {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 72px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.service-row.reverse { flex-direction: row-reverse; }
+.service-image {
+  flex: 1;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.service-image.kitchen { background: linear-gradient(135deg, #D4D0C8, #C0BAB2); color: #9A948C; }
+.service-image.bathroom { background: linear-gradient(135deg, #C4C8CC, #B0B4B8); color: #8A8E92; }
+.service-image.loft { background: linear-gradient(135deg, #D0CCC8, #BCB8B4); color: #969290; }
+.service-image.renovation { background: linear-gradient(135deg, #C8CCD0, #B4B8BC); color: #8E9296; }
+.service-content { flex: 1; }
+.service-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.service-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin-bottom: 20px;
+}
+.service-link {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.service-link:hover { text-decoration: underline; }
+
+/* ── HOW WE WORK ── */
+.process-section {
+  background: var(--text-dark);
+  color: white;
+  padding: 96px 64px;
+}
+.process-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.process-section .section-label { color: var(--brand); }
+.process-section .section-title { color: white; }
+.process-section .section-intro { color: rgba(255,255,255,0.65); }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.process-step {}
+.step-number {
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--brand);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.process-step h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+.process-step p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.project-card { border-radius: 12px; overflow: hidden; cursor: pointer; }
+.project-img {
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: transform 0.3s;
+}
+.project-card:hover .project-img { transform: scale(1.03); }
+.project-img-1 { background: linear-gradient(135deg, #D4D0CA, #C0BCB6); color: #A09C96; }
+.project-img-2 { background: linear-gradient(135deg, #C8CCC4, #B4B8B0); color: #949890; }
+.project-img-3 { background: linear-gradient(135deg, #CCC8C4, #B8B4B0); color: #989490; }
+.project-info { padding: 18px 4px; }
+.project-type {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.project-info h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.project-info p { font-size: 14px; color: var(--text-light); }
+
+/* ── WHY BLOCKBOX LTD ── */
+.why-section {
+  background: var(--warm-bg);
+  padding: 96px 64px;
+}
+.why-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+.why-text { flex: 1; }
+.why-features { flex: 1; }
+.why-feature {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.why-feature:first-child { padding-top: 0; }
+.why-feature h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.why-feature p {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ── FAQ ── */
+.faq-list { max-width: 720px; }
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 24px 0;
+}
+.faq-item h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item h3::after { content: '+'; color: var(--brand); font-size: 24px; }
+.faq-item p {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-top: 12px;
+  display: none;
+}
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--text-dark);
+  padding: 80px 64px;
+  text-align: center;
+  border-radius: 0;
+}
+.cta-banner h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 44px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 16px;
+}
+.cta-banner p {
+  color: rgba(255,255,255,0.65);
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+.cta-btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--text-dark);
+  color: rgba(255,255,255,0.5);
+  padding: 64px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+}
+.footer .logo { color: white; margin-bottom: 16px; display: block; }
+.footer p { font-size: 14px; line-height: 1.8; }
+.footer-col h4 {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.footer-col a:hover { color: rgba(255,255,255,0.8); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a href="#" class="logo">BlockBox Ltd<span>.</span></a>
+  <div class="nav-links">
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#" class="nav-cta">Get your estimate</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-text">
+      <h1>Renovating London homes with <em>care and craft</em></h1>
+      <p>From kitchen renovations to full new builds, BlockBox Ltd brings warmth, clarity, and quality to every project across Greater London.</p>
+      <a href="#" class="hero-cta">Get your free estimate →</a>
+      <span class="hero-cta-note">Takes about 2 minutes · No obligation</span>
+    </div>
+    <div class="hero-image"></div>
+  </div>
+</section>
+
+<!-- ── PRESS / TRUST BAR ── -->
+<div class="press-bar">
+  <span class="press-logo">The Times</span>
+  <span class="press-logo">House & Garden</span>
+  <span class="press-logo">Trustpilot ★★★★★</span>
+  <span class="press-logo">Houzz</span>
+  <span class="press-logo">Homes & Gardens</span>
+</div>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-strip">
+  <div class="testimonials-strip-inner">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"BlockBox Ltd completely transformed our home. The team were thoughtful, tidy, and a pleasure to have around."</blockquote>
+      <div class="testimonial-author">James & Laura H.</div>
+      <div class="testimonial-location">Wandsworth, SW18</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Our first big renovation and we couldn't have felt more supported. They made it simple when it could have been stressful."</blockquote>
+      <div class="testimonial-author">Priya M.</div>
+      <div class="testimonial-location">Islington, N1</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Beautiful finish on our loft conversion. Genuinely exceeded our expectations — we'd recommend them to anyone."</blockquote>
+      <div class="testimonial-author">David T.</div>
+      <div class="testimonial-location">Streatham, SW16</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES (editorial rows, not grid cards) ── -->
+<section class="section-full" style="padding-bottom: 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding-bottom: 32px;">
+    <div class="section-label">Our services</div>
+    <div class="section-title">Everything your home needs,<br>under one roof</div>
+    <div class="section-intro">Whether you're reimagining a single room or building from the ground up, we manage every detail from first conversation to final walkthrough.</div>
+  </div>
+</section>
+
+<div style="padding: 0 64px 96px;">
+  <div class="service-row">
+    <div class="service-image kitchen">📸 Warm, bright kitchen photo</div>
+    <div class="service-content">
+      <h3>Kitchen renovations</h3>
+      <p>From galley kitchens to open-plan family spaces, we design and build kitchens that become the heart of your home. Every detail — cabinetry, worktops, tiling, lighting — considered and crafted.</p>
+      <a href="#" class="service-link">Our kitchens →</a>
+    </div>
+  </div>
+
+  <div class="service-row reverse">
+    <div class="service-image bathroom">📸 Moody, stylish bathroom photo</div>
+    <div class="service-content">
+      <h3>Bathroom renovations</h3>
+      <p>Contemporary bathrooms built to last. We handle the full scope — plumbing, tiling, fixtures, lighting — to deliver a space that feels both luxurious and practical.</p>
+      <a href="#" class="service-link">Our bathrooms →</a>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="service-image loft">📸 Light-filled loft conversion photo</div>
+    <div class="service-content">
+      <h3>Loft conversions</h3>
+      <p>Add a bedroom, study, or en-suite to your home without extending your footprint. We manage structural design, planning, and the full build — start to finish.</p>
+      <a href="#" class="service-link">Our loft conversions →</a>
+    </div>
+  </div>
+
+  <div class="service-row reverse">
+    <div class="service-image renovation">📸 Full renovation, period home photo</div>
+    <div class="service-content">
+      <h3>Full renovations & new builds</h3>
+      <p>Major structural work, complete refurbishments, and new residential builds across Greater London. We bring project management, design coordination, and skilled trades together under one team.</p>
+      <a href="#" class="service-link">Our projects →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW WE WORK ── -->
+<section class="process-section">
+  <div class="process-inner">
+    <div class="section-label">How we work</div>
+    <div class="section-title">A clear path from first<br>conversation to finished home</div>
+    <div class="section-intro">Most renovation stress comes from uncertainty. We've built a process that keeps things transparent, on schedule, and in your hands throughout.</div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h3>Free consultation</h3>
+        <p>We visit your home, listen to your vision, and talk through what's realistic for your space and budget.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h3>Design & quote</h3>
+        <p>You'll receive detailed plans and a transparent, all-inclusive quote. No surprises, no hidden costs.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h3>Build</h3>
+        <p>Your dedicated project manager keeps everything on track, with regular updates so you always know where things stand.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h3>Handover</h3>
+        <p>A thorough walkthrough and snagging check. We don't consider it done until you're delighted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section class="section">
+  <div class="section-label">Recent projects</div>
+  <div class="section-title">Spaces we've transformed</div>
+  <div class="section-intro">A selection of recent work across Greater London. Every project photographed after real families moved in.</div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-img project-img-1">📸 Bright, lived-in kitchen</div>
+      <div class="project-info">
+        <div class="project-type">Kitchen renovation</div>
+        <h3>Victorian Terrace</h3>
+        <p>Clapham, SW4</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img project-img-2">📸 Airy loft bedroom</div>
+      <div class="project-info">
+        <div class="project-type">Loft conversion</div>
+        <h3>Edwardian Semi</h3>
+        <p>Dulwich, SE21</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img project-img-3">📸 Full house renovation</div>
+      <div class="project-info">
+        <div class="project-type">Full renovation</div>
+        <h3>Period Townhouse</h3>
+        <p>Islington, N1</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY BLOCKBOX LTD ── -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-text">
+      <div class="section-label">Why BlockBox Ltd</div>
+      <div class="section-title">Built around trust, not just timber</div>
+      <p style="font-size: 18px; color: var(--text-body); line-height: 1.7; margin-top: 16px;">Most renovation stress comes from money, timing, and communication. We've designed our approach to address all three — so you can enjoy the process, not just the result.</p>
+      <p style="font-size: 14px; color: var(--text-light); margin-top: 24px; font-style: italic;">[ Placeholder — business differentiator to be confirmed ]</p>
+    </div>
+    <div class="why-features">
+      <div class="why-feature">
+        <h3>Transparent pricing</h3>
+        <p>Detailed, all-inclusive quotes before any work begins. No hidden fees, no surprise costs at the end.</p>
+      </div>
+      <div class="why-feature">
+        <h3>One dedicated project manager</h3>
+        <p>A single point of contact throughout your build. No chasing multiple people for updates.</p>
+      </div>
+      <div class="why-feature">
+        <h3>Weekly progress updates</h3>
+        <p>Photos, timelines, and clear next steps — delivered to you every week without asking.</p>
+      </div>
+      <div class="why-feature">
+        <h3>Fully insured & certified</h3>
+        <p style="font-style: italic; color: var(--text-light);">[ Placeholder — specific certifications to be confirmed ]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section">
+  <div class="section-label">Common questions</div>
+  <div class="section-title">Frequently asked questions</div>
+  <div style="height: 40px;"></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>Where in London do you work?</h3>
+      <p>We cover all of Greater London, including central, south, east, west, and north London boroughs.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How much does a typical renovation cost?</h3>
+      <p>Projects range from around £15,000 for a bathroom renovation to £500,000+ for a full new build. We'll give you a detailed estimate within a few days of our initial consultation.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need planning permission?</h3>
+      <p>It depends on the scope. Many projects fall under permitted development, but we'll advise you during the consultation and handle applications if needed.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long will my project take?</h3>
+      <p>A kitchen typically takes 4–8 weeks; a loft conversion 8–12 weeks; a full renovation 12–24 weeks. We'll give you a detailed timeline in our quote.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I stay in my home during the work?</h3>
+      <p>In most cases, yes. We plan the work in phases to minimise disruption. For major structural work, we'll discuss options with you upfront.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What happens if something goes wrong?</h3>
+      <p>We're fully insured and stand behind our work. Any issues are addressed promptly at our cost, and we offer a workmanship warranty on all projects.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-banner">
+  <h2>Ready to talk about your home?</h2>
+  <p>Book a free consultation and we'll visit to discuss your project — no obligation, no hard sell.</p>
+  <a href="#" class="cta-btn-white">Get your free estimate →</a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="logo">BlockBox Ltd<span>.</span></a>
+      <p>1 Nightingale Lane<br>London SW16 3RT</p>
+      <p style="margin-top: 12px;">enquiries@blockbox.com<br>07709-358480</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Kitchens</a>
+      <a href="#">Bathrooms</a>
+      <a href="#">Loft conversions</a>
+      <a href="#">New builds</a>
+      <a href="#">Renovations</a>
+      <a href="#">Planning & design</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About us</a>
+      <a href="#">Our projects</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Areas we cover</h4>
+      <a href="#">Greater London</a>
+      <a href="#">South London</a>
+      <a href="#">North London</a>
+      <a href="#">East London</a>
+      <a href="#">West London</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BlockBox Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

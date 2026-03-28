@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlockBox Ltd — Colour Palette Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: #F5F5F5; color: #333; }
+
+.page-header {
+  padding: 40px 48px;
+  background: white;
+  border-bottom: 1px solid #E5E5E5;
+}
+.page-header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.page-header p { color: #888; font-size: 15px; }
+
+.palette-section {
+  padding: 48px;
+  margin-bottom: 2px;
+}
+
+.palette-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+.palette-desc {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 24px;
+  max-width: 640px;
+  line-height: 1.6;
+}
+.palette-trend {
+  font-size: 13px;
+  color: #666;
+  background: #F0F0F0;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+/* Swatches */
+.swatches {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.swatch {
+  width: 80px;
+  text-align: center;
+}
+.swatch-color {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.swatch-name { font-size: 11px; font-weight: 600; color: #555; }
+.swatch-hex { font-size: 10px; color: #AAA; font-family: monospace; }
+
+/* ── HERO MOCKUPS ── */
+
+/* Palette 1: Ink & Cloud */
+.p1-bg { background: #FAF9F7; }
+.hero-mock {
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1000px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ── PALETTE 1: INK & CLOUD ── */
+.p1-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #FAF9F7;
+  border-bottom: 1px solid #EDECE9;
+}
+.p1-logo { font-family: 'Fraunces', serif; font-size: 22px; color: #1B2A4A; font-weight: 700; }
+.p1-logo span { color: #B69D74; }
+.p1-links { display: flex; gap: 24px; align-items: center; font-size: 13px; color: #6B7280; }
+.p1-cta { background: #1B2A4A; color: #FAF9F7; padding: 8px 20px; border-radius: 24px; font-size: 12px; font-weight: 600; }
+.p1-hero {
+  display: flex;
+  background: #FAF9F7;
+  padding: 48px 32px;
+  gap: 40px;
+  align-items: center;
+}
+.p1-hero-text { flex: 1; }
+.p1-hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  line-height: 1.15;
+  color: #1B2A4A;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.p1-hero-text h1 em { font-style: italic; color: #B69D74; }
+.p1-hero-text p { font-size: 14px; color: #6B7280; line-height: 1.6; margin-bottom: 20px; }
+.p1-btn { background: #B69D74; color: white; padding: 12px 24px; border-radius: 24px; font-size: 13px; font-weight: 600; display: inline-block; text-decoration: none; }
+.p1-btn-note { font-size: 11px; color: #AAA; display: block; margin-top: 8px; }
+.p1-hero-img { flex: 1; aspect-ratio: 4/3; background: linear-gradient(135deg, #E8E4DE, #D8D2CA); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #B0A898; }
+.p1-trust {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 32px;
+  background: #F3F1ED;
+  font-size: 12px;
+  color: #8A8580;
+}
+.p1-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 32px;
+  background: #F3F1ED;
+}
+.p1-testimonial {
+  background: #FAF9F7;
+  padding: 20px;
+  border-radius: 10px;
+}
+.p1-stars { color: #B69D74; font-size: 14px; margin-bottom: 8px; }
+.p1-testimonial blockquote { font-family: 'Fraunces', serif; font-size: 13px; font-style: italic; color: #1B2A4A; line-height: 1.5; margin-bottom: 10px; }
+.p1-testimonial .author { font-size: 12px; font-weight: 600; color: #1B2A4A; }
+.p1-testimonial .loc { font-size: 11px; color: #AAA; }
+.p1-process {
+  background: #1B2A4A;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.p1-step-num { font-family: 'Fraunces', serif; font-size: 36px; color: #B69D74; margin-bottom: 8px; }
+.p1-step h3 { font-family: 'Fraunces', serif; font-size: 15px; color: white; margin-bottom: 4px; }
+.p1-step p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+
+/* ── PALETTE 2: SAGE & STONE ── */
+.p2-bg { background: #FAFBF9; }
+.p2-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #FAFBF9;
+  border-bottom: 1px solid #E8EBE5;
+}
+.p2-logo { font-family: 'Fraunces', serif; font-size: 22px; color: #2D2D2D; font-weight: 700; }
+.p2-logo span { color: #6B8F71; }
+.p2-links { display: flex; gap: 24px; align-items: center; font-size: 13px; color: #6B7268; }
+.p2-cta { background: #2D2D2D; color: #FAFBF9; padding: 8px 20px; border-radius: 24px; font-size: 12px; font-weight: 600; }
+.p2-hero {
+  display: flex;
+  background: #FAFBF9;
+  padding: 48px 32px;
+  gap: 40px;
+  align-items: center;
+}
+.p2-hero-text { flex: 1; }
+.p2-hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  line-height: 1.15;
+  color: #2D2D2D;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.p2-hero-text h1 em { font-style: italic; color: #6B8F71; }
+.p2-hero-text p { font-size: 14px; color: #6B7268; line-height: 1.6; margin-bottom: 20px; }
+.p2-btn { background: #6B8F71; color: white; padding: 12px 24px; border-radius: 24px; font-size: 13px; font-weight: 600; display: inline-block; }
+.p2-btn-note { font-size: 11px; color: #AAA; display: block; margin-top: 8px; }
+.p2-hero-img { flex: 1; aspect-ratio: 4/3; background: linear-gradient(135deg, #D6DDD2, #C4CCC0); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #96A090; }
+.p2-trust {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 32px;
+  background: #EFF2EC;
+  font-size: 12px;
+  color: #8A8E86;
+}
+.p2-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 32px;
+  background: #EFF2EC;
+}
+.p2-testimonial {
+  background: #FAFBF9;
+  padding: 20px;
+  border-radius: 10px;
+}
+.p2-stars { color: #6B8F71; font-size: 14px; margin-bottom: 8px; }
+.p2-testimonial blockquote { font-family: 'Fraunces', serif; font-size: 13px; font-style: italic; color: #2D2D2D; line-height: 1.5; margin-bottom: 10px; }
+.p2-testimonial .author { font-size: 12px; font-weight: 600; color: #2D2D2D; }
+.p2-testimonial .loc { font-size: 11px; color: #AAA; }
+.p2-process {
+  background: #2D2D2D;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.p2-step-num { font-family: 'Fraunces', serif; font-size: 36px; color: #6B8F71; margin-bottom: 8px; }
+.p2-step h3 { font-family: 'Fraunces', serif; font-size: 15px; color: white; margin-bottom: 4px; }
+.p2-step p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+
+/* ── PALETTE 3: WARM WHITE & CHARCOAL ── */
+.p3-bg { background: #FAFAF8; }
+.p3-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #FAFAF8;
+  border-bottom: 1px solid #E8E6E2;
+}
+.p3-logo { font-family: 'Fraunces', serif; font-size: 22px; color: #2C2C2C; font-weight: 700; }
+.p3-logo span { color: #8B7355; }
+.p3-links { display: flex; gap: 24px; align-items: center; font-size: 13px; color: #7A756E; }
+.p3-cta { background: #2C2C2C; color: #FAFAF8; padding: 8px 20px; border-radius: 24px; font-size: 12px; font-weight: 600; }
+.p3-hero {
+  display: flex;
+  background: #FAFAF8;
+  padding: 48px 32px;
+  gap: 40px;
+  align-items: center;
+}
+.p3-hero-text { flex: 1; }
+.p3-hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  line-height: 1.15;
+  color: #2C2C2C;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.p3-hero-text h1 em { font-style: italic; color: #8B7355; }
+.p3-hero-text p { font-size: 14px; color: #7A756E; line-height: 1.6; margin-bottom: 20px; }
+.p3-btn { background: #8B7355; color: white; padding: 12px 24px; border-radius: 24px; font-size: 13px; font-weight: 600; display: inline-block; }
+.p3-btn-note { font-size: 11px; color: #AAA; display: block; margin-top: 8px; }
+.p3-hero-img { flex: 1; aspect-ratio: 4/3; background: linear-gradient(135deg, #E2DDD6, #D4CEC6); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #B0A898; }
+.p3-trust {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 32px;
+  background: #F0EEEA;
+  font-size: 12px;
+  color: #8A857E;
+}
+.p3-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 32px;
+  background: #F0EEEA;
+}
+.p3-testimonial {
+  background: #FAFAF8;
+  padding: 20px;
+  border-radius: 10px;
+}
+.p3-stars { color: #8B7355; font-size: 14px; margin-bottom: 8px; }
+.p3-testimonial blockquote { font-family: 'Fraunces', serif; font-size: 13px; font-style: italic; color: #2C2C2C; line-height: 1.5; margin-bottom: 10px; }
+.p3-testimonial .author { font-size: 12px; font-weight: 600; color: #2C2C2C; }
+.p3-testimonial .loc { font-size: 11px; color: #AAA; }
+.p3-process {
+  background: #2C2C2C;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.p3-step-num { font-family: 'Fraunces', serif; font-size: 36px; color: #8B7355; margin-bottom: 8px; }
+.p3-step h3 { font-family: 'Fraunces', serif; font-size: 15px; color: white; margin-bottom: 4px; }
+.p3-step p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+.recommendation {
+  background: #1B2A4A;
+  color: white;
+  padding: 48px;
+  margin-top: 2px;
+}
+.recommendation h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.recommendation p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  max-width: 720px;
+}
+.recommendation strong { color: white; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>BlockBox Ltd — Colour Palette Options</h1>
+  <p>Three palettes grounded in 2026 interior design colour trends. Same layout, different mood. Open in browser to compare.</p>
+</div>
+
+
+<!-- ═══════════════════ PALETTE 1: INK & CLOUD ═══════════════════ -->
+<div class="palette-section" style="background: white;">
+  <div class="palette-title">Palette 1: Ink & Cloud</div>
+  <div class="palette-desc">Deep navy headings on warm white, with muted gold accents. The "quiet confidence" palette — crisp, editorial, sophisticated. Inspired by the 2026 trend toward rich, inky blues replacing blacks.</div>
+  <div class="palette-trend">🎨 Trend backing: Deep blues (Wallpaper*, Dulux 2026), Cloud Dancer white (Pantone 2026 COTY), champagne gold metallics</div>
+
+  <div class="swatches">
+    <div class="swatch"><div class="swatch-color" style="background: #FAF9F7;"></div><div class="swatch-name">Cloud</div><div class="swatch-hex">#FAF9F7</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #F3F1ED;"></div><div class="swatch-name">Linen</div><div class="swatch-hex">#F3F1ED</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #1B2A4A;"></div><div class="swatch-name">Ink</div><div class="swatch-hex">#1B2A4A</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #B69D74;"></div><div class="swatch-name">Brass</div><div class="swatch-hex">#B69D74</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #6B7280;"></div><div class="swatch-name">Slate</div><div class="swatch-hex">#6B7280</div></div>
+  </div>
+
+  <div class="hero-mock">
+    <div class="p1-nav">
+      <div class="p1-logo">BlockBox Ltd<span>.</span></div>
+      <div class="p1-links">
+        <span>Services</span><span>Projects</span><span>About</span><span>Contact</span>
+        <span class="p1-cta">Get your estimate</span>
+      </div>
+    </div>
+    <div class="p1-hero">
+      <div class="p1-hero-text">
+        <h1>Renovating London homes with <em>care and craft</em></h1>
+        <p>From kitchen renovations to full new builds, BlockBox Ltd brings warmth, clarity, and quality to every project across Greater London.</p>
+        <span class="p1-btn">Get your free estimate →</span>
+        <span class="p1-btn-note">Takes about 2 minutes · No obligation</span>
+      </div>
+      <div class="p1-hero-img">📸 Bright kitchen photo</div>
+    </div>
+    <div class="p1-trust">
+      <span>★★★★★ Trustpilot</span>
+      <span>Fully insured</span>
+      <span>Health & safety certified</span>
+      <span>Greater London</span>
+    </div>
+    <div class="p1-testimonials">
+      <div class="p1-testimonial">
+        <div class="p1-stars">★★★★★</div>
+        <blockquote>"BlockBox Ltd completely transformed our home. Thoughtful, tidy, and a pleasure to have around."</blockquote>
+        <div class="author">James & Laura H.</div>
+        <div class="loc">Wandsworth, SW18</div>
+      </div>
+      <div class="p1-testimonial">
+        <div class="p1-stars">★★★★★</div>
+        <blockquote>"Our first big renovation and we couldn't have felt more supported."</blockquote>
+        <div class="author">Priya M.</div>
+        <div class="loc">Islington, N1</div>
+      </div>
+      <div class="p1-testimonial">
+        <div class="p1-stars">★★★★★</div>
+        <blockquote>"Beautiful finish on our loft conversion. Exceeded our expectations."</blockquote>
+        <div class="author">David T.</div>
+        <div class="loc">Streatham, SW16</div>
+      </div>
+    </div>
+    <div class="p1-process">
+      <div class="p1-step"><div class="p1-step-num">1</div><h3>Free consultation</h3><p>We visit your home and listen to your vision.</p></div>
+      <div class="p1-step"><div class="p1-step-num">2</div><h3>Design & quote</h3><p>Detailed plans and a transparent, all-inclusive quote.</p></div>
+      <div class="p1-step"><div class="p1-step-num">3</div><h3>Build</h3><p>Your dedicated project manager keeps everything on track.</p></div>
+      <div class="p1-step"><div class="p1-step-num">4</div><h3>Handover</h3><p>Thorough walkthrough. We don't finish until you're delighted.</p></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════ PALETTE 2: SAGE & STONE ═══════════════════ -->
+<div class="palette-section" style="background: white;">
+  <div class="palette-title">Palette 2: Sage & Stone</div>
+  <div class="palette-desc">Muted sage green as the accent on a clean, slightly cool white. Charcoal for text. Fresh, natural, and crisp — like a well-designed Scandi-meets-London interior. The greenest, freshest option.</div>
+  <div class="palette-trend">🎨 Trend backing: Warm Eucalyptus (Valspar 2026 COTY), muted sage/moss greens (Wallpaper*, Ideal Home), nature-connected interiors</div>
+
+  <div class="swatches">
+    <div class="swatch"><div class="swatch-color" style="background: #FAFBF9;"></div><div class="swatch-name">Frost</div><div class="swatch-hex">#FAFBF9</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #EFF2EC;"></div><div class="swatch-name">Mist</div><div class="swatch-hex">#EFF2EC</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #2D2D2D;"></div><div class="swatch-name">Charcoal</div><div class="swatch-hex">#2D2D2D</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #6B8F71;"></div><div class="swatch-name">Sage</div><div class="swatch-hex">#6B8F71</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #6B7268;"></div><div class="swatch-name">Lichen</div><div class="swatch-hex">#6B7268</div></div>
+  </div>
+
+  <div class="hero-mock">
+    <div class="p2-nav">
+      <div class="p2-logo">BlockBox Ltd<span>.</span></div>
+      <div class="p2-links">
+        <span>Services</span><span>Projects</span><span>About</span><span>Contact</span>
+        <span class="p2-cta">Get your estimate</span>
+      </div>
+    </div>
+    <div class="p2-hero">
+      <div class="p2-hero-text">
+        <h1>Renovating London homes with <em>care and craft</em></h1>
+        <p>From kitchen renovations to full new builds, BlockBox Ltd brings warmth, clarity, and quality to every project across Greater London.</p>
+        <span class="p2-btn">Get your free estimate →</span>
+        <span class="p2-btn-note">Takes about 2 minutes · No obligation</span>
+      </div>
+      <div class="p2-hero-img">📸 Bright kitchen photo</div>
+    </div>
+    <div class="p2-trust">
+      <span>★★★★★ Trustpilot</span>
+      <span>Fully insured</span>
+      <span>Health & safety certified</span>
+      <span>Greater London</span>
+    </div>
+    <div class="p2-testimonials">
+      <div class="p2-testimonial">
+        <div class="p2-stars">★★★★★</div>
+        <blockquote>"BlockBox Ltd completely transformed our home. Thoughtful, tidy, and a pleasure to have around."</blockquote>
+        <div class="author">James & Laura H.</div>
+        <div class="loc">Wandsworth, SW18</div>
+      </div>
+      <div class="p2-testimonial">
+        <div class="p2-stars">★★★★★</div>
+        <blockquote>"Our first big renovation and we couldn't have felt more supported."</blockquote>
+        <div class="author">Priya M.</div>
+        <div class="loc">Islington, N1</div>
+      </div>
+      <div class="p2-testimonial">
+        <div class="p2-stars">★★★★★</div>
+        <blockquote>"Beautiful finish on our loft conversion. Exceeded our expectations."</blockquote>
+        <div class="author">David T.</div>
+        <div class="loc">Streatham, SW16</div>
+      </div>
+    </div>
+    <div class="p2-process">
+      <div class="p2-step"><div class="p2-step-num">1</div><h3>Free consultation</h3><p>We visit your home and listen to your vision.</p></div>
+      <div class="p2-step"><div class="p2-step-num">2</div><h3>Design & quote</h3><p>Detailed plans and a transparent, all-inclusive quote.</p></div>
+      <div class="p2-step"><div class="p2-step-num">3</div><h3>Build</h3><p>Your dedicated project manager keeps everything on track.</p></div>
+      <div class="p2-step"><div class="p2-step-num">4</div><h3>Handover</h3><p>Thorough walkthrough. We don't finish until you're delighted.</p></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════ PALETTE 3: WARM WHITE & MUSHROOM ═══════════════════ -->
+<div class="palette-section" style="background: white;">
+  <div class="palette-title">Palette 3: Warm White & Mushroom</div>
+  <div class="palette-desc">Rich taupe/mushroom tones with a warm bronze accent on a crisp warm white. The most neutral, timeless option — quietly luxurious without committing to a bold accent colour. Easiest to pair with any photography.</div>
+  <div class="palette-trend">🎨 Trend backing: Silhouette deep brown (Benjamin Moore 2026 COTY), mushroom neutrals, muted bronze metallics, warm taupe replacing cool grey</div>
+
+  <div class="swatches">
+    <div class="swatch"><div class="swatch-color" style="background: #FAFAF8;"></div><div class="swatch-name">Warm White</div><div class="swatch-hex">#FAFAF8</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #F0EEEA;"></div><div class="swatch-name">Stone</div><div class="swatch-hex">#F0EEEA</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #2C2C2C;"></div><div class="swatch-name">Carbon</div><div class="swatch-hex">#2C2C2C</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #8B7355;"></div><div class="swatch-name">Mushroom</div><div class="swatch-hex">#8B7355</div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #7A756E;"></div><div class="swatch-name">Pewter</div><div class="swatch-hex">#7A756E</div></div>
+  </div>
+
+  <div class="hero-mock">
+    <div class="p3-nav">
+      <div class="p3-logo">BlockBox Ltd<span>.</span></div>
+      <div class="p3-links">
+        <span>Services</span><span>Projects</span><span>About</span><span>Contact</span>
+        <span class="p3-cta">Get your estimate</span>
+      </div>
+    </div>
+    <div class="p3-hero">
+      <div class="p3-hero-text">
+        <h1>Renovating London homes with <em>care and craft</em></h1>
+        <p>From kitchen renovations to full new builds, BlockBox Ltd brings warmth, clarity, and quality to every project across Greater London.</p>
+        <span class="p3-btn">Get your free estimate →</span>
+        <span class="p3-btn-note">Takes about 2 minutes · No obligation</span>
+      </div>
+      <div class="p3-hero-img">📸 Bright kitchen photo</div>
+    </div>
+    <div class="p3-trust">
+      <span>★★★★★ Trustpilot</span>
+      <span>Fully insured</span>
+      <span>Health & safety certified</span>
+      <span>Greater London</span>
+    </div>
+    <div class="p3-testimonials">
+      <div class="p3-testimonial">
+        <div class="p3-stars">★★★★★</div>
+        <blockquote>"BlockBox Ltd completely transformed our home. Thoughtful, tidy, and a pleasure to have around."</blockquote>
+        <div class="author">James & Laura H.</div>
+        <div class="loc">Wandsworth, SW18</div>
+      </div>
+      <div class="p3-testimonial">
+        <div class="p3-stars">★★★★★</div>
+        <blockquote>"Our first big renovation and we couldn't have felt more supported."</blockquote>
+        <div class="author">Priya M.</div>
+        <div class="loc">Islington, N1</div>
+      </div>
+      <div class="p3-testimonial">
+        <div class="p3-stars">★★★★★</div>
+        <blockquote>"Beautiful finish on our loft conversion. Exceeded our expectations."</blockquote>
+        <div class="author">David T.</div>
+        <div class="loc">Streatham, SW16</div>
+      </div>
+    </div>
+    <div class="p3-process">
+      <div class="p3-step"><div class="p3-step-num">1</div><h3>Free consultation</h3><p>We visit your home and listen to your vision.</p></div>
+      <div class="p3-step"><div class="p3-step-num">2</div><h3>Design & quote</h3><p>Detailed plans and a transparent, all-inclusive quote.</p></div>
+      <div class="p3-step"><div class="p3-step-num">3</div><h3>Build</h3><p>Your dedicated project manager keeps everything on track.</p></div>
+      <div class="p3-step"><div class="p3-step-num">4</div><h3>Handover</h3><p>Thorough walkthrough. We don't finish until you're delighted.</p></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════ RECOMMENDATION ═══════════════════ -->
+<div class="recommendation">
+  <h2>My recommendation: Palette 1 (Ink & Cloud)</h2>
+  <p><strong>It's the crispest of the three</strong> — the deep navy gives headings real punch against the warm white, and the muted brass accent is warm without being heavy. It reads as "sophisticated London" rather than "cosy country" or "neutral safe".</p>
+  <p style="margin-top: 16px;"><strong>The navy also solves the "crispness" issue</strong> you raised — it provides much stronger contrast than charcoal or mushroom, which makes the page feel sharp and defined. And the brass accent works beautifully with both warm and cool photography, so it'll pair well with whatever AI images we generate.</p>
+  <p style="margin-top: 16px;"><strong>Palette 2 (Sage)</strong> is the freshest and most on-trend, but sage green in a builder's brand might feel more "wellness" than "construction". <strong>Palette 3 (Mushroom)</strong> is the safest and most timeless, but it's the least crisp — it's warm and refined but lacks the bite you asked for.</p>
+</div>
+
+</body>
+</html>
